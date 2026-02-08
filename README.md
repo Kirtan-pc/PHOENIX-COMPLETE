@@ -109,3 +109,41 @@ __pycache__/
 ## License
 
 MIT License
+
+---
+
+## Web Version (Django)
+
+This repo now includes a beginner-friendly web chatbot inside `phoenix_web/`.
+
+### Run the web app
+
+1. Install Django if you have not already:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Start the development server:
+
+```bash
+cd phoenix_web
+python manage.py runserver
+```
+
+3. Open the app in your browser:
+
+```
+http://127.0.0.1:8000/
+```
+
+### How it is organized
+
+- `phoenix_web/chatbot/services/assistant.py` contains the core command logic.
+- `phoenix_web/chatbot/services/voice.py` contains placeholders for speech-to-text and text-to-speech.
+- `phoenix_web/chatbot/templates/chatbot/index.html` + `static/chatbot/` contain the UI.
+
+### Notes
+
+- The web version avoids paid APIs by default. You can add your own LLM later.
+- The original voice assistant remains in `main.py`.

@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHOENIX | Welcome</title>
+    <link rel="stylesheet" href="{% static 'chatbot/styles.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 40px var(--accent-glow));
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 18px 48px;
+            border-radius: 100px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px -10px var(--accent-glow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 20px 40px -10px var(--accent-glow);
+            background: #ff7043;
+            /* Lighter orange */
+        }
+
+        .logo-large {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 50px var(--accent-glow));
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="logo-large">🔥</div>
+        <h1>Meet Phoenix</h1>
+        <p>
+            Your intelligent companion for the web.<br>
+            Voice-enabled, smart, and always ready to help.
+        </p>
+        <a href="/chat/" class="cta-button">Get Started →</a>
+    </div>
+</body>
+
+</html>

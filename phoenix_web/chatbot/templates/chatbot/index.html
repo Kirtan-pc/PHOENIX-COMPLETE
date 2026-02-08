@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PHOENIX</title>
+  <link rel="stylesheet" href="/static/chatbot/styles.css" />
+  <!-- Adding a modern font -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="background-blobs">
+    <!-- Blobs removed for premium dark theme -->
+  </div>
+
+  <div class="app-container">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🔥</span>
+        <span class="logo-text">PHOENIX</span>
+      </div>
+      <div class="status">
+        <span class="status-dot"></span> Online
+      </div>
+    </header>
+
+    <main class="chat-window" id="chat">
+      <div class="welcome-message">
+        <h1>PHOENIX</h1>
+        <p>Your ultra-fast AI assistant. <br>Try saying <strong>"Open YouTube"</strong> or <strong>"What is the speed of
+            light?"</strong></p>
+      </div>
+    </main>
+
+    <footer class="input-area">
+      <div class="composer">
+        <button id="voiceBtn" class="voice-button" title="Voice Input">
+          <span class="mic-icon">🎤</span>
+        </button>
+        <input id="messageInput" class="composer-input" type="text" placeholder="Talk to Phoenix..."
+          autocomplete="off" />
+        <button id="sendBtn" class="send-button">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/chatbot/app.js"></script>
+</body>
+
+</html>
