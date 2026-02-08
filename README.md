@@ -1,149 +1,93 @@
-# Phoenix Assistant 🔥
+# PHOENIX Assistant 🔥
 
-Phoenix is a voice-activated virtual assistant built in Python. It uses speech recognition, text-to-speech, and generative AI to perform tasks like opening websites, playing music, fetching news, and answering questions.
-
----
-
-## Features
-
-- Voice-activated control
-- Opens popular websites (Google, YouTube, Facebook)
-- Plays music from a custom library
-- Fetches top news headlines via NewsAPI
-- Answers questions using Gemini AI (Google's generative model)
+**PHOENIX** is a powerful, voice-activated virtual assistant and web-based chatbot built with Python and Django. It leverages cutting-edge AI (Groq/Llama 3), Speech Recognition, and real-time APIs to provide a seamless interactive experience.
 
 ---
 
-## Setup Instructions
+## 🚀 Features
+
+### 🎧 Voice Assistant (CLI)
+- **Voice Activation**: Say "Phoenix" to trigger the assistant.
+- **Smart Search**: Integrated with Google and YouTube for instant query results.
+- **Entertainment**: Seamless YouTube music playback via voice commands.
+- **Web Navigation**: Hands-free control to open popular sites like Facebook, Google, and YouTube.
+- **Real-time News**: Fetches top global headlines instantly.
+
+### 💻 Web Chatbot (Django)
+- **Modern UI**: Sleek, responsive chat interface.
+- **AI Integration**: Powered by Groq (Llama 3) for friendly and intelligent responses.
+- **Voice Support**: Built-in speech synthesis (speaking) and recognition.
+- **Action-Oriented**: Can execute web actions (like opening URLs) directly from the chat.
+
+---
+
+## 🛠️ Setup Instructions
 
 ### 1. Clone the repository
-
 ```bash
-git clone https://github.com/YOUR_USERNAME/phoenix-assistant.git
-cd phoenix-assistant
+git clone https://github.com/Kirtan-pc/PHOENIX-COMPLETE.git
+cd PHOENIX-COMPLETE
 ```
 
-### 2. Create and activate a virtual environment
-
+### 2. Environment Setup
+Create a virtual environment and install dependencies:
 ```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
+# Create venv
+python -m venv .venv
 
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-```
+# Activate (Windows)
+.venv\Scripts\activate
 
-### 3. Install required packages
+# Activate (macOS/Linux)
+# source .venv/bin/activate
 
-```bash
+# Install dependencies
 pip install -r requirements.txt
 ```
 
----
-
-## API Keys
-
-You need:
-
-- NewsAPI.org key – for news headlines
-- Gemini AI (Google) key – for generative answers
-
-You can hardcode them in `main.py` (as in the example) or store them in a `.env` file (recommended).
+### 3. API Keys Configuration
+Create a `.env` file in the root directory and add your keys:
+```env
+GROQ_API_KEY=your_groq_api_key
+NEWS_API_KEY=your_news_api_key
+DJANGO_SECRET_KEY=your_django_secret_key
+```
 
 ---
 
-## Usage
+## 🚀 Running the Apps
 
-Run the assistant with:
-
+### CLI Voice Assistant
 ```bash
 python main.py
 ```
 
-Say **"Phoenix"** to activate it, then speak a command like:
-
-- “Open Google”
-- “Play [song name]”
-- “Give me the news”
-- “What is the capital of France?”
-
-Say **"stop"**, **"sleep"**, or **"bye"** to shut it down.
-
----
-
-## Project Structure
-
-```
-phoenix-assistant/
-│
-├── main.py             # Main assistant script
-├── musicLibrary.py     # Dictionary of songs and links
-├── requirements.txt    # Python package list
-├── .gitignore          # Files/folders Git should ignore
-├── README.md           # This file
-└── venv/                # Virtual environment (ignored by Git)
-```
-
----
-
-## .gitignore
-
-```
-venv/
-__pycache__/
-*.pyc
-.env
-```
-
----
-
-## Notes
-
-- Ensure your microphone works and system permissions allow recording.
-- For better API key management, consider using a `.env` file with `python-dotenv`.
-
----
-
-## License
-
-MIT License
-
----
-
-## Web Version (Django)
-
-This repo now includes a beginner-friendly web chatbot inside `phoenix_web/`.
-
-### Run the web app
-
-1. Install Django if you have not already:
-
-```bash
-pip install -r requirements.txt
-```
-
-2. Start the development server:
-
+### Web Dashboard (Django)
 ```bash
 cd phoenix_web
 python manage.py runserver
 ```
+Visit `http://127.0.0.1:8000/` in your browser.
 
-3. Open the app in your browser:
+---
 
+## 📂 Project Structure
+```text
+PHOENIX/
+├── phoenix_web/          # Django Web Application
+│   ├── chatbot/          # Chatbot logic, templates, and services
+│   └── phoenix_web/      # Project settings
+├── main.py               # CLI Voice Assistant Entry Point
+├── .env                  # Environment Variables (Ignored by Git)
+├── .gitignore            # Git exclusion rules
+├── requirements.txt      # Project dependencies
+└── README.md             # Project documentation
 ```
-http://127.0.0.1:8000/
-```
 
-### How it is organized
+---
 
-- `phoenix_web/chatbot/services/assistant.py` contains the core command logic.
-- `phoenix_web/chatbot/services/voice.py` contains placeholders for speech-to-text and text-to-speech.
-- `phoenix_web/chatbot/templates/chatbot/index.html` + `static/chatbot/` contain the UI.
+## 🛡️ Security
+This project uses `python-dotenv` to keep sensitive API keys protected. **Never** commit your `.env` file to version control.
 
-### Notes
-
-- The web version avoids paid APIs by default. You can add your own LLM later.
-- The original voice assistant remains in `main.py`.
+## 📄 License
+This project is licensed under the MIT License.
