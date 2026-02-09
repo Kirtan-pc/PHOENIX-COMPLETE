@@ -5,12 +5,19 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 # Load environment variables
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-load_dotenv(BASE_DIR / '.env')
+BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+dot_env = BASE_DIR / '.env'
+if dot_env.exists():
+    load_dotenv(dot_env)
+else:
+    print(f"Warning: .env file not found at {dot_env}")
 
 # Groq API Key
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
+
+if not GROQ_API_KEY:
+    print("Warning: GROQ_API_KEY not found in environment variables.")
 
 OFFLINE_RESPONSES = {
     "hello": "Hello! I'm operating in low-power mode (Rate Limit), but I'm here.",
